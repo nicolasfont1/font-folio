@@ -1,17 +1,17 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { VT323 } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const vt = VT323({subsets: ["latin"], weight: "400"})
 
 export const metadata = {
   title: 'Font-folio!',
-  description: 'My name is Nicolás Font, so this is my font-folio.',
+  description: 'My name is Nicolás Font, so this is my Font-folio.',
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={vt.className}>{children}</body>
     </html>
   )
 }
