@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={vt.className}>{children}</body>
+      <body className={vt.className} style={{backgroundColor: "#22162B"}}>{children}</body>
     </html>
   )
 }
