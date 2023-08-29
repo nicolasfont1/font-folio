@@ -19,7 +19,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="bg-darkPurple h-screen w-full text-white flex items-center justify-center text-2xl">
+    <main className="bg-darkPurple h-screen-mobile w-full text-white flex items-center justify-center text-2xl">
       This will be my landing page!
       Window measures:{" "}
       {windowMeasures}
