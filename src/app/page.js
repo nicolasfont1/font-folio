@@ -2,9 +2,10 @@
 import { useEffect, useState } from "react"
 
 export default function Home() {
-  const [windowMeasures, setWindowMeasures] = useState(`W: ${window.innerWidth}, H: ${window.innerHeight}`);
+  const [windowMeasures, setWindowMeasures] = useState(``);
 
   useEffect(() => {
+    setWindowMeasures(`W: ${window.innerWidth}, H: ${window.innerHeight}`);
     function handleResize() {
       const width = window.innerWidth;
       const height = window.innerHeight;
