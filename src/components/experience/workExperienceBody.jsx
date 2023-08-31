@@ -30,11 +30,11 @@ const WorkExperienceBody = () => {
 					<Image src={"/logos/LogoHuntek.jpeg"} alt="LogoHuntek" layout="fill"/>
 				</a>
 				<article className="flex flex-col w-2/5 ml-2 justify-center md:w-fit hover:cursor-default">
-					<div className="">
+					<div>
 						<span className="text-5xl h-10 md:text-8xl">Front</span> <span className="text-6xl h-12 md:text-8xl">End</span>
 					</div>
 					<span className="text-3xl pl-1 md:text-5xl">Developer</span>
-					<span className="text-2xl pl-1">2023</span>
+					<span className="text-2xl pl-1 md:text-3xl">2023</span>
 				</article>
 				<div className="w-24 h-10 relative hidden md:flex justify-center">
 					<a href="https://huntek.vercel.app/" target="_blank">
@@ -45,8 +45,8 @@ const WorkExperienceBody = () => {
 					}
 				</div>
 			</article>
-			<article className="w-full h-[60%] px-4 flex items-center justify-center md:h-1/2">
-				<div id="scrollableBody" className="bg-white opacity-90 border-black border-8 border-double h-[93%] w-full mt-2 overflow-y-scroll md:h-[90%] md:mt-0 hover:cursor-default">
+			<article className="w-full h-[60%] px-4 flex items-center justify-center md:h-1/2 md:w-11/12 md:px-0">
+				<div id="scrollableBody" className="bg-white opacity-90 border-black border-8 border-double h-[93%] w-full mt-2 overflow-y-scroll md:h-[90%] md:mt-0 hover:cursor-default scrollbar scrollbar-thumb-lightPurple scrollbar-w-1 scrollbar-track-slate-300">
 					<p className="text-black text-xl px-2 mb-3 md:text-3xl">
 						Huntek is a startup that offers a <span className="text-lightPurple">Tinder-like</span> application, with
 						the objective of <span className="text-lightPurple">connect candidates</span> with{" "}
