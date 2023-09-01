@@ -1,5 +1,6 @@
 import MainHeaderMobile from "@/components/main/mobile/mainHeaderMobile"
 import MainHeaderBubbleMobile from "@/components/main/mobile/mainHeaderBubbleMobile"
+import MainHelperMobile from "@/components/main/mobile/mainHelperMobile"
 import MainUserBubbleMobile from "@/components/main/mobile/mainUserBubbleMobile"
 
 const MainPage = () => {
@@ -8,6 +9,7 @@ const MainPage = () => {
       <section className="bg-purple w-11/12 h-[95%] rounded-xl flex flex-col justify-evenly items-center md:w-10/12">
         <MainHeaderMobile />
         <MainHeaderBubbleMobile />
+        <MainHelperMobile />
         <MainUserBubbleMobile />
       </section>
     </main>
