@@ -5,3 +5,19 @@
 .h-screen-mobile {
   height: 100svh;
 }
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(15%)
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 0.5s infinite;
+}
