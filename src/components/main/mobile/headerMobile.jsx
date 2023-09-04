@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-const MainHeaderMobile = () => {
+const HeaderMobile = () => {
   return (
     <article className="bg-darkPurple/50 w-11/12 h-32 rounded-full flex flex-row mt-2">
       <div className="bg-darkPurple w-32 h-full rounded-full relative">
@@ -20,4 +20,4 @@ const MainHeaderMobile = () => {
     </article>
   )
 }
-export default MainHeaderMobile
+export default HeaderMobile
