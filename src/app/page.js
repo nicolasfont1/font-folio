@@ -1,29 +1,16 @@
 "use client"
-import { useEffect, useState } from "react"
+import useGetScreenSize from "@/hooks/useGetScreenSize"
 
 export default function Home() {
-  const [windowMeasures, setWindowMeasures] = useState(``);
-
-  useEffect(() => {
-    setWindowMeasures(`W: ${window.innerWidth}, H: ${window.innerHeight}`);
-    function handleResize() {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      setWindowMeasures(`W: ${width}, H: ${height}`);
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const screenSize = useGetScreenSize()
 
   return (
-    <main className="bg-darkPurple h-screen-mobile w-full text-white flex items-center justify-center text-2xl">
+    <main className="bg-darkPurple h-screen-mobile w-full text-white flex flex-col items-center justify-center text-2xl text-center">
       This will be my landing page!
-      Window measures:{" "}
-      {windowMeasures}
+      <p>
+        Window measures:{" "}
+        {screenSize}
+      </p>
     </main>
   )
 }
