@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import OptionSelectedArrow from "../optionSelectedArrow";
 
-const MainUserBubbleMobile = () => {
+const UserBubbleMobile = () => {
 	const router = useRouter();
 
 	const [paths, setPaths] = useState({
@@ -76,4 +76,4 @@ const MainUserBubbleMobile = () => {
 		</article>
 	);
 };
-export default MainUserBubbleMobile;
+export default UserBubbleMobile;
