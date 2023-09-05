@@ -10,7 +10,7 @@ const HeaderDesktop = () => {
           width={200}
           height={200}
           alt="LiterallyMe"
-          className="absolute left-14 top-9"
+          className="no-drag absolute left-14 top-9"
         />
       </div>
       <article className="w-[63%] flex flex-col justify-around">
