@@ -3,7 +3,7 @@ import HeaderBubbleDesktop from "./headerBubbleDesktop"
 
 const HeaderDesktop = () => {
   return (
-    <article className="bg-darkPurple/50 w-11/12 h-80 rounded-l-full rounded-r-[7000px] flex flex-row">
+    <article className="no-drag bg-darkPurple/50 w-11/12 h-80 rounded-l-full rounded-r-[7000px] flex flex-row">
       <div className="bg-darkPurple w-[320px] h-full rounded-full relative">
       <Image
           src={"/various/Me.png"}
