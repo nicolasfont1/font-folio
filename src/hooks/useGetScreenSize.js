@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react"
 
 export default function useGetScreenSize() {
-  const [screenSize, setScreenSize] = useState("");
+  const [width, setWidth] = useState("")
+  const [height, setHeight] = useState("")
 
   useEffect(() => {
-    setScreenSize(`W: ${window.innerWidth}, H: ${window.innerHeight}`);
-    
+    setWidth(window.innerWidth)
+    setHeight(window.innerHeight)
+
     function handleResize() {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      setScreenSize(`W: ${width}, H: ${height}`);
+      const actualWidth = window.innerWidth;
+      const actualHeight = window.innerHeight;
+
+      setWidth(window.innerWidth)
+      setHeight(window.innerHeight)
     }
 
     window.addEventListener('resize', handleResize);
@@ -19,5 +23,5 @@ export default function useGetScreenSize() {
     };
   }, []);
 
-  return screenSize
+  return {width, height}
 }
