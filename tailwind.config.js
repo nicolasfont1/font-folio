@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xs: "375px",
+        xs: "450px",
       },
       colors: {
         darkPurple: "#22162B",
