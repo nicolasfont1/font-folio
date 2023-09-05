@@ -48,7 +48,7 @@ const UserBubbleMobile = () => {
 	};
 
 	return (
-		<article className="w-5/6 h-[200px] bg-white/80 border-black border-8 border-double mb-2 text-black text-2xl" tabIndex={0} onBlur={() => handlePaths()}>
+		<article className="w-5/6 max-w-xs h-[200px] bg-white/80 border-black border-8 border-double mb-2 text-black text-2xl" tabIndex={0} onBlur={() => handlePaths()}>
 			<div
 				className={`w-full min-h-[32px] h-fit flex justify-end mb-2 text-left ${paths.experience ? "" : "opacity-40"}`}
 				onClick={() => handlePaths("experience")}>
