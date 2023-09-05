@@ -1,32 +1,9 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import usePressedArrowKeys from "@/hooks/usePressedArrowKeys";
 
 const NavbarExperience = () => {
-	const [pressLeftArrow, setPressLeftArrow] = useState("");
-	const [pressRightArrow, setPressRightArrow] = useState("");
-
-	const handleArrowKeys = (event) => {
-		if (event.type === "keydown" && event.key === "ArrowLeft") {
-			setPressLeftArrow("translate-y-1");
-		} else if (event.type === "keyup" && event.key === "ArrowLeft") {
-			setPressLeftArrow("");
-		}
-		if (event.type === "keydown" && event.key === "ArrowRight") {
-			setPressRightArrow("translate-y-1");
-		} else if (event.type === "keyup" && event.key === "ArrowRight") {
-			setPressRightArrow("");
-		}
-	};
-
-	useEffect(() => {
-		window.addEventListener("keydown", handleArrowKeys);
-		window.addEventListener("keyup", handleArrowKeys);
-		return () => {
-			window.removeEventListener("keydown", handleArrowKeys);
-			window.removeEventListener("keyup", handleArrowKeys);
-		};
-	}, []);
+	const {pressLeftArrow, pressRightArrow} = usePressedArrowKeys()
 
 	return (
 		<div className="w-4/5 bg-lightPurple flex flex-row justify-evenly items-center p-2 rounded-lg md:w-1/3">
