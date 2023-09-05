@@ -8,24 +8,26 @@ import HelperMobile from "@/components/main/mobile/helperMobile";
 import UserBubbleMobile from "@/components/main/mobile/userBubbleMobile";
 
 import HeaderDesktop from "@/components/main/desktop/headerDesktop";
+import HelperDesktop from "@/components/main/desktop/helperDesktop";
 
 const MainPage = () => {
-  const { width } = useGetScreenSize();
+	const { width } = useGetScreenSize();
 
 	return (
 		<main className="bg-darkPurple h-screen-mobile w-full text-white flex items-center justify-center">
-        {
-          width < 768
-            ? <section className="bg-purple w-11/12 h-[95%] rounded-xl flex flex-col justify-evenly items-center md:w-10/12">
-              <HeaderMobile />
-              <HeaderBubbleMobile />
-              <HelperMobile />
-              <UserBubbleMobile />
-            </section>
-            : <section className="bg-purple w-11/12 h-[95%] rounded-xl flex flex-col justify-evenly items-center md:w-10/12">
-              <HeaderDesktop />
-            </section>
-        }
+			{width < 768 ? (
+				<section className="bg-purple w-11/12 h-[95%] rounded-xl flex flex-col justify-evenly items-center md:w-10/12">
+					<HeaderMobile />
+					<HeaderBubbleMobile />
+					<HelperMobile />
+					<UserBubbleMobile />
+				</section>
+			) : (
+				<section className="bg-purple w-11/12 h-[95%] rounded-xl flex flex-col justify-evenly items-center md:w-10/12">
+					<HeaderDesktop />
+					<HelperDesktop />
+				</section>
+			)}
 		</main>
 	);
 };
