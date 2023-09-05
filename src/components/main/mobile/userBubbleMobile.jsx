@@ -48,30 +48,30 @@ const UserBubbleMobile = () => {
 	};
 
 	return (
-		<article className="w-5/6 max-w-xs h-[200px] bg-white/80 border-black border-8 border-double mb-2 text-black text-2xl" tabIndex={0} onBlur={() => handlePaths()}>
+		<article className="w-5/6 max-w-xs flex flex-col justify-between h-[200px] bg-white/80 border-black border-8 border-double mb-2 text-black text-2xl" tabIndex={0} onBlur={() => handlePaths()}>
 			<div
-				className={`w-full min-h-[32px] h-fit flex justify-end mb-2 text-left ${paths.experience ? "" : "opacity-40"}`}
+				className={`w-full min-h-[32px] h-fit flex justify-end text-left ${paths.experience ? "" : "opacity-40"}`}
 				onClick={() => handlePaths("experience")}>
 				{paths.experience && <OptionSelectedArrow />}
-				<p className="w-[255px]">Let me see your <span className="text-lightPurple">experience</span></p>
+				<p className="w-11/12">Let me see your <span className="text-lightPurple">experience</span></p>
 			</div>
 			<div
-				className={`w-full min-h-[32px] h-fit flex justify-end mb-2 text-left ${paths.projects ? "" : "opacity-40"}`}
+				className={`w-full min-h-[32px] h-fit flex justify-end text-left ${paths.projects ? "" : "opacity-40"}`}
 				onClick={() => handlePaths("projects")}>
 				{paths.projects && <OptionSelectedArrow />}
-				<p className="w-[255px] leading-none">Show me what <span className="text-lightPurple">projects</span> you've got!</p>
+				<p className="w-11/12 leading-none">Show me what <span className="text-lightPurple">projects</span> you've got!</p>
 			</div>
 			<div
-				className={`w-full min-h-[32px] h-fit flex justify-end mb-2 text-left ${paths.about ? "" : "opacity-40"}`}
+				className={`w-full min-h-[32px] h-fit flex justify-end text-left ${paths.about ? "" : "opacity-40"}`}
 				onClick={() => handlePaths("about")}>
 				{paths.about && <OptionSelectedArrow />}
-				<p className="w-[255px] leading-none">Tell me more <span className="text-lightPurple">about</span> yourself</p>
+				<p className="w-11/12 leading-none">Tell me more <span className="text-lightPurple">about</span> yourself</p>
 			</div>
 			<div
-				className={`w-full min-h-[32px] h-fit flex justify-end mb-2 text-left ${paths.play ? "" : "opacity-40"}`}
+				className={`w-full min-h-[32px] h-fit flex justify-end text-left ${paths.play ? "" : "opacity-40"}`}
 				onClick={() => handlePaths("play")}>
 				{paths.play && <OptionSelectedArrow />}
-				<p className="w-[255px]">I want to play a <span className="text-lightPurple">game</span></p>
+				<p className="w-11/12">I want to play a <span className="text-lightPurple">game</span></p>
 			</div>
 		</article>
 	);
