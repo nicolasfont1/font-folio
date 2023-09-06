@@ -6,30 +6,13 @@ import Image from "next/image"
 
 const UserMenuDesktop = () => {
   const router = useRouter();
+  let [option, setOption] = useState(1)
 
-  // const [pressUpArrow, setPressUpArrow] = useState("");
-  // const [pressDownArrow, setPressDownArrow] = useState("");
-  // const [pressLeftArrow, setPressLeftArrow] = useState("");
-	// const [pressRightArrow, setPressRightArrow] = useState("");
-
-  // const handlePressedArrowKeys = (event) => {
-	// 	if (event.type === "keydown" && event.key === "ArrowLeft") {
-	// 		setPressLeftArrow("translate-y-1");
-	// 	} else if (event.type === "keyup" && event.key === "ArrowLeft") {
-	// 		setPressLeftArrow("");
-	// 	}
-	// 	if (event.type === "keydown" && event.key === "ArrowRight") {
-	// 		setPressRightArrow("translate-y-1");
-	// 	} else if (event.type === "keyup" && event.key === "ArrowRight") {
-	// 		setPressRightArrow("");
-	// 	}
-  // };
-  
   const [paths, setPaths] = useState({
-		experience: true,
-		projects: false,
-		about: false,
-		play: false,
+		1: true,
+		2: false,
+		3: false,
+		4: false,
   });
   
   const [contact, setContact] = useState({
@@ -38,38 +21,69 @@ const UserMenuDesktop = () => {
     email: false
   })
 
-  const [menu, setMenu] = useState({
+  let [menu, setMenu] = useState({
     portfolioPaths: true,
     contactPaths: false
   })
 
-  // useEffect(() => {
-	// 	window.addEventListener("keydown", handlePressedArrowKeys);
-	// 	window.addEventListener("keyup", handlePressedArrowKeys);
-	// 	return () => {
-	// 		window.removeEventListener("keydown", handlePressedArrowKeys);
-	// 		window.removeEventListener("keyup", handlePressedArrowKeys);
-	// 	};
-	// }, []);
+  const handlePressedArrowKeys = (event) => {
+    if (menu.portfolioPaths) {
+      if (event.key === "ArrowDown") {
+        if (option < 4) {
+          setOption(option += 1)
+          setPaths({
+            [option - 1]: false,
+            [option]: true
+          })
+        }
+      } else if (event.key === "ArrowUp") {
+        if (option > 1) {
+          setOption(option = option - 1)
+          setPaths({
+            [option + 1]: false,
+            [option]: true
+          })
+        }
+      } else if (event.key === "ArrowRight") {
+        setPaths({1: false, 2: false, 3: false, 4: false})
+        setMenu({ portfolioPaths: false, contactPaths: true })
+        setContact({linkedin: true, github: false})
+      }
+    }
+    if (menu.contactPaths) {
+      if (event.key === "ArrowDown" && contact.linkedin) {
+        setContact({linkedin: false, github: true, email: false})
+      } else if (event.key === "ArrowDown" && contact.github) {
+        setContact({linkedin: false, github: false, email: true})
+      }
+    }
+  };
+
+  useEffect(() => {
+		window.addEventListener("keydown", handlePressedArrowKeys);
+		return () => {
+			window.removeEventListener("keydown", handlePressedArrowKeys);
+		};
+	}, []);
 
 
   return (
     <section className="w-4/5 h-48 flex flex-row justify-between no-drag">
       <article className={`w-9/12 h-full bg-white/80 border-black border-8 text-[42px] text-black leading-none justify-end ${menu.portfolioPaths ? "" : "opacity-40"}`}>
-        <div className={`w-full flex text-left justify-end ${paths.experience ? "" : "opacity-40"}`}>
-          {paths.experience && <OptionSelectedArrow />}
+        <div className={`w-full flex text-left justify-end ${paths[1] ? "" : "opacity-40"}`}>
+          {paths[1] && <OptionSelectedArrow />}
           <p className="w-11/12">Let me see your <span className="text-lightPurple">experience</span></p>
         </div>
-        <div className={`w-full flex text-left justify-end ${paths.projects ? "" : "opacity-40"}`}>
-          {paths.projects && <OptionSelectedArrow />}
+        <div className={`w-full flex text-left justify-end ${paths[2] ? "" : "opacity-40"}`}>
+          {paths[2] && <OptionSelectedArrow />}
           <p className="w-11/12">Show me what <span className="text-lightPurple">projects</span> you've got!</p>
         </div>
-        <div className={`w-full flex text-left justify-end ${paths.about ? "" : "opacity-40"}`}>
-          {paths.about && <OptionSelectedArrow />}
+        <div className={`w-full flex text-left justify-end ${paths[3] ? "" : "opacity-40"}`}>
+          {paths[3] && <OptionSelectedArrow />}
           <p className="w-11/12">Tell me more <span className="text-lightPurple">about</span> yourself</p>
         </div>
-        <div className={`w-full flex text-left justify-end ${paths.play ? "" : "opacity-40"}`}>
-          {paths.play && <OptionSelectedArrow />}
+        <div className={`w-full flex text-left justify-end ${paths[4] ? "" : "opacity-40"}`}>
+          {paths[4] && <OptionSelectedArrow />}
           <p className="w-11/12">I want to play a <span className="text-lightPurple">game</span></p>
         </div>
       </article>
